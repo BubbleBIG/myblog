@@ -11,8 +11,8 @@ class ManagerController extends Controller {
         // echo 'admin login in';
         //display()没有参数，查找模板名称和操作名称一致
 
-
-        // $_SESSION['a_name'] = 'admin';
+session_start();
+        $_SESSION['a_name'] = 'admin';
         // die;
         $this -> display();
 //        var_dump(get_defined_constants(true));
