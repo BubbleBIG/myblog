@@ -5,15 +5,14 @@
     <title>MY Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{$Think.const.CSS_URL}index.css">
-    <!-- 新 Bootstrap 核心 CSS 文件 -->
+
     <link rel="stylesheet" href="{$Think.const.CSS_URL}bootstrap.min.css">
 
-    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script src="{$Think.const.JS_URL}jquery.min.js"></script>
 
-    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="{$Think.const.JS_URL}bootstrap.min.js"></script>
     <script src="{$Think.const.JS_URL}index.js"></script>
+
 </head>
 <body>
 <div class="container header">
@@ -60,8 +59,6 @@
 
 </div>
 <div id="navigator">
-    <div class="navigator_bg">
-    </div>
     <div class="navigator" align="right">
         <ul  class="">
 
@@ -93,50 +90,75 @@
 
 
 <div class="body">
-<div class="pull-left">
-    <div class=""><p>left</p></div>
+<div class="pull-right">
+
     <div class="info">
-        <p>about me</p>
+    <div class="he ca" align='center'><p>Calendar</p></div>
+
+
     </div>
     <div class="sea" >
-       <div class="panel_head"><span>Content-Search</span></div>
+    <div class="he" align="center"><span>Content-Search</span></div>
+       <div class="panel_head"></div>
         <div  class="form">
-
-        <form action="" method="post" class="form-inline" >
+        <form action="#" name="search">
+        <table border="0" cellpadding="0" cellspacing="0" class="tab_search" align="center">
+            <tr>
+                <td>
+                    <input type="text" name="q" title="Search" class="searchinput" id="searchinput" onkeydown="if (event.keyCode==13) {}" onblur="if(this.value=='')value='- Search Something -';" onfocus="if(this.value=='- Search Something -')value='';" value="- Search Something -" size="10"/>
+                </td>
+                <td>
+                    <input type="image" width="21" height="17" class="searchaction" onclick="if(document.forms['search'].searchinput.value=='- Search Something -')document.forms['search'].searchinput.value='';" alt="Search" src="{$Think.const.IMG_URL}search.png" border="0" hspace="2"/>
+                </td>
+            </tr>
+        </table>
+        </form>
+        <!-- <form action="" method="post" class="form-inline" >
         <div class="form-group input">
         <input class="form-control" type="text" name="search" placeholder="something">
         </div>
         <div class="form-group input">
-        <button type="submit" class="btn btn-default"><span class=""></span>search</button>
+        <input type="submit" class="btn btn-default"><span class=""></span></input>
         </div>
-        </form>
+        </form> -->
         </div>
     </div>
+    <div class="tag-view">
+    <div class="he" align="center"><p>Taglist</p></div>
+
+    </div>
     <div class="message">
+    <div class="he" align="center"><label class="lab">message</label></div>
         <div id="message" class="mess">
-            <label class="lab"><h4>message</h4></label>
-            <div id="1"></div>
+            <div class="">&nbsp;&nbsp;最新留言：</div>
+
+            <div id="mes"></div>
 
         </div>
         <div id="mess-view" class=""></div>
-        <div id="mess-add">
-            <button type="submit" class="btn btn-default">add message</button>
+        <div id="mess-add" >
+            <button type="submit" class="btn btn-default" >View all Or Add message</button>
         </div>
     </div>
     <div class="other">
-        <p>other</p>
+    <div class="he" align="center"><p>other</p></div>
+
     </div>
+
 </div>
 
-    <div class="sear pull-right">
+    <div class="sear pull-left">
 
 
     </div>
-    <div class="pull-right" id="cont">
+    <div class="pull-left" id="cont">
 
-        <div class="right"><p>right<br>hello world<br>hello world<br>hello world<br>hello world</p></div>
+        <div class="left"><p>right<br>hello world<br>hello world<br>hello world<br>hello world</p></div>
         <div  ></div>
     </div>
+
 </div>
+
 </body>
+
 </html>

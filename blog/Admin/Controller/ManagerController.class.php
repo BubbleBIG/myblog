@@ -4,6 +4,7 @@ use Think\Controller;
 class ManagerController extends Controller {
     // public function index(){
     // echo 'hello,world!!!!';}
+    //登陆界面
     public function login() {
         // $db = M('admin');
         // $result = $db->select();
@@ -18,6 +19,7 @@ class ManagerController extends Controller {
 //        var_dump(get_defined_constants(true));
 
     }
+    //主页面
     public function index() {
 session_start();
         $this -> display();
@@ -35,6 +37,7 @@ session_start();
            $Verify->codeSet = '0123456789';
            $Verify->entry();
     }
+    //登陆判断
     public function handle() {
 
 session_start();
@@ -88,34 +91,81 @@ session_start();
         }
 
     }
+    //验证码检验
     function check_verify($code, $id = '') {
         $verify = new \Think\Verify();
         return $verify->check($code, $id);
     }
 
-    function add() {
+    //编辑器页面
+    function blog() {
         $this->display();
     }
+    //退出登陆
     function logout() {
         session(null);
         $this -> redirect('login');
     }
+    //添加blog的上传数据库操作
     function addblog() {
         session_start();
-        if (!IS_POST)  U('index');
+        // if (!IS_POST)  U('index');
             $data = array(
-                'title' => I('title'),
-                'content' => I('edit'),
+                'title' => $_POST['title'],
+                'content' => $_POST['edit'],
                 'tag' => I('tag'),
                 'createtime' => date('Y-m-d H:i:s'),
 
                 );
-           //  print_r($data);
-           // if( M('blog')->data($data)->add()) {
-           //      $this->success('发布成功','index');
-           // } else {
-           //  $this->error('失败');
-           // }
+            print_r($data);
+           if( M('blog')->data($data)->add()) {
+                $this->success('发布成功','index');
+           } else {
+            $this->error('失败');
+           }
     }
+    //blog列表
+    function listblog() {
+
+        $blog = D('blog');
+        // $blog = D('blog')->relation(true)->select();
+        // print_r($blog);
+        // $b = $blog->where(1)->select();
+        // htmlspecialchars_decode($b);
+        $this->assign('listblog',$blog->select())->display();
+    }
+    function other() {
+        $this->display();
+    }
+    function del() {
+        // $id = (int)$_GET['id'];
+        // echo $id;
+        $update = array(
+            'id' => (int) $_GET['id'] , );
+    }
+    public function inf(){
+            $info = array(
+                '操作系统'                      => PHP_OS,
+                '运行环境'                      => $_SERVER["SERVER_SOFTWARE"],
+                'PHP运行方式'                       => php_sapi_name(),
+                '上传附件限制'                    => ini_get('upload_max_filesize'),
+                '执行时间限制'                    => ini_get('max_execution_time').'秒',
+                '服务器时间'                     => date("Y年n月j日 H:i:s"),
+                '北京时间'                      => gmdate("Y年n月j日 H:i:s",time()+8*3600),
+                '服务器域名/IP'                  => $_SERVER['SERVER_NAME'].' [ '.gethostbyname($_SERVER['SERVER_NAME']).' ]',
+                '剩余空间'                      => round((@disk_free_space(".")/(1024*1024)),2).'M',
+                'register_globals'              => get_cfg_var("register_globals")=="1" ? "ON" : "OFF",
+                'magic_quotes_gpc'              => (1===get_magic_quotes_gpc())?'YES':'NO',
+                'magic_quotes_runtime'          => (1===get_magic_quotes_runtime())?'YES':'NO',
+            );
+
+            $this->display();
+        }
+
+        public function getAllNode()
+        {
+            $this->assign('nodes',$this->_node);
+            $this->display('nodes');
+        }
 
 }

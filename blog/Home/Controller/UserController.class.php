@@ -7,15 +7,41 @@ class UserController extends Controller {
         $this->display();
 //         var_dump(get_defined_constants(true));
     }
-
-    //user login in
+   //摘要视图
     public function Contents() {
+
         // echo "login in";
         // echo '<br>';
         // echo U('User/login');
 
         //调用视图display()
-        $this->assign('blog',M('blog')->select())->display();
+        $blog = M('blog');
+
+         $content = Array(
+            // $blog -> query("select content from blog")
+            $blog->select()
+            );
+       // htmlspecialchars_decode($content);
+        $this->assign('blog',$blog->select())->display();
+
+    }
+    //目录视图
+    public function View() {
+
+        // echo "login in";
+        // echo '<br>';
+        // echo U('User/login');
+
+        //调用视图display()
+        $blog = M('blog');
+
+         $content = Array(
+            // $blog -> query("select content from blog")
+            $blog->select()
+            );
+       // htmlspecialchars_decode($content);
+        $this->assign('blog',$blog->select())->display();
+
     }
 
     //user sign up

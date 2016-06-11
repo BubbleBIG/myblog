@@ -5,6 +5,7 @@ body {
     -o-background-size: cover;
     background-size: cover;
     padding-top:20px;
+    height: 1000px;
 
 }
 #editor {
@@ -12,6 +13,7 @@ body {
 }
 .menu {
     background: #ededed;
+
 }
 .tit {
     margin-top: 20px;
@@ -90,4 +92,12 @@ body {
     margin-right: 8px;
 
 
+}
+.table {
+    background: #ededed;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 16px;
+    margin-top: 4%;
 }

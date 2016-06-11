@@ -1,19 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
 
 <div id='main'>
         <foreach name='blog' item='v'>
-        <!-- <dl class='paper a{:mt_rand(1,5)}'> -->
-        <dl>
-            <dt>
-                <span class='title'>{$v.title}</span>
-            </dt>
-            <dd class='content'>{$v.content}</dd>
-            <dd class='bottom'>
-                <span class='time'>{$v.createtime}</span>
-                <a href="" class='close'></a>
-            </dd>
-        </dl>
 
+
+                <div align="center" class='title' style="font-size: 21px;"><a href="#{:U('/' .$v['id'])}">{$v.title}</a></div>
+
+                <div class='summary' style="font-size: 14px;"><p>{$v.content}</p></div>
+
+
+                <div align="right" class="more" style="font-size: 14px;"><a href="#{:U('/' .$v['id'])} ">阅读全文</a></div>
+                <div align="right" class='time'>{$v.createtime}</div><br>
         </foreach>
 
 
 </div>
+</body>
+</html>

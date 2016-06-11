@@ -18,47 +18,86 @@ body {
     height: 200px;
 }
 
-.pull-left {
-    background: #58626D;
-    width: 24%;
+.pull-right {
+    /*background: #58626D;*/
+    width: 25%;
     height: 1100px;
-    margin-left: 8%;
+    margin-right: 9%;
 
 }
 
-.pull-right {
+.pull-left {
     /*color: #00A000;*/
     /*background: #585858;*/
     background: #fff;
-    width: 58%;
+    width: 56%;
     /*height: 100%;*/
-    margin-right: 8%;
+    margin-left: 10%;
 }
-.pull-right ul li {
+.pull-left ul li {
     display: inline-block;
 }
-.scar .btn {
+/*.scar .btn {
 
     margin-right: 10px;
-}
+}*/
 .navigator li {
     display: inline-block;
 }
 #navigator {
-    margin-right: 8%;
+    margin-right: 34%;
+}
+.he {
+
+    height: 25px;
+    background: #56ffdd;
 }
 .info {
      width: 95%;
-     height: 350px;
-     background: #dedede;
-     margin: 2%;
+     height: 250px;
+     background: #ffe;
+     margin: 0 2% 2% 2%;
  }
 .sea {
     width: 95%;
-    height: 95px;
-    background: #dedede;
+    height: 90px;
+    background: #ffe;
+    /*background: #fff;*/
     margin: 2%;
     /*text-align: center;*/
+}
+/*search */
+.searchinput{
+    border-right-width: 0px;
+    /*padding-left: 8px;*/
+    width: 220px;
+    /*font-family: impact;*/
+    float: left;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    color: #cdcdcd;
+    /*margin-left: 4px;*/
+    font-size: 16pt;
+    vertical-align: middle;
+    border-left-width: 0px;
+    /*padding-right: 10px;*/
+    padding: 3px 10px 3px  8px;
+
+}
+.tab_search{
+    border: #cccccc 1px solid;
+    height: 25px;
+    margin-top: 4%;
+    background: #fff;
+
+}
+.searchaction{
+    width: 25px;
+    float: left;
+    height: 25px;
+    margin-right: 5px;
+    margin-left: 7px;
+
 }
 
 /*.center-block {*/
@@ -72,15 +111,33 @@ body {
     /*margin-top: 9%;*/
 
 }
+.tag-view {
+    width: 95%;
+    height: 200px;
+    background: #ffe;
+    margin: 2%;
+}
 .message {
     width: 95%;
-    height: 350px;
-    background: #dedede;
+    height: 300px;
+    background: #ffe;
     margin: 2%;
+}
+#mess-view {
+    height: 217px;
+}
+#mess-add .btn{
+    width: 100%;
+    background: #cdcdcd;
+
+}
+#mess-add .btn:hover {
+    background: #585885;
+    color: #fff;
 }
 .other {
     margin: 2%;
     width: 95%;
     height: 150px;
-    background: #dedede;
+    background: #ffe;
 }
